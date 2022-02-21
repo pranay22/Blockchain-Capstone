@@ -4,7 +4,7 @@ import 'openzeppelin-solidity/contracts/utils/Address.sol';
 import 'openzeppelin-solidity/contracts/drafts/Counters.sol';
 import 'openzeppelin-solidity/contracts/math/SafeMath.sol';
 import 'openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol';
-import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
+//import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
 import "./Oraclize.sol";
 
 contract Ownable {

@@ -22,8 +22,9 @@
 // const infuraKey = "fj4jll3k.....";
 //
 const HDWallet = require('@truffle/hdwallet-provider');
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const infuraKey = "fa6660e75d754b9889c10f4f00c6ba3c";
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -48,12 +49,18 @@ module.exports = {
       port: 9545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
      },
+     rinkeby: {
+      provider: () => new HDWallet(mnemonic, "https://rinkeby.infura.io/v3/" + infuraKey),
+      network_id: 4,
+      gas: 6300000,
+      gasPrice: 10000000000
+    },
 
      developmentDep: {
       host: "127.0.0.1",
       port: 9545,
       network_id: "*",
-    },
+    }
 
     // Another network with more advanced options...
     // advanced: {

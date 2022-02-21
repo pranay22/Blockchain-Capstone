@@ -42,7 +42,7 @@ contract('SolnSquareVerifier', accounts => {
 
         it('should return token uri', async function () { 
             let keyId = await this.contract.addSolution(account_one, 1, proof.proof.a, proof.proof.b, proof.proof.c, proof.inputs);
-            //let minted = await this.contract.mint(account_one, 1, keyId.logs[0].args[0]);
+            let minted = await this.contract.mint(account_one, 1, keyId.logs[0].args[0]);
             let tokenURI = await this.contract.tokenURI.call(1, {from: account_one})
             assert.equal(tokenURI == "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/1", true, "incorrect tokenURI " + tokenURI);
         })
